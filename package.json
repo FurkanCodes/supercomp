@@ -7,7 +7,9 @@
   "bin": {
     "scomp": "./index.js"
   },
-
+"scripts" : { 
+    "test" : "jest" 
+ },
   "author": "Veli Furkan TURKOGLU",
   "license": "ISC",
   "dependencies": {
