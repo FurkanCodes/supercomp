@@ -7,9 +7,9 @@
   "bin": {
     "scomp": "./index.js"
   },
-"scripts" : { 
-    "test" : "jest" 
- },
+  "scripts": {
+    "test": "jest"
+  },
   "author": "Veli Furkan TURKOGLU",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +19,7 @@
     "ora": "^8.0.1"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/FurkanCodes/supercomp.git"
-},
+    "type": "git",
+    "url": "https://github.com/FurkanCodes/supercomp.git"
+  }
 }
