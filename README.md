@@ -1,6 +1,7 @@
-# Newponent
+# Super Comp
+![banner](https://github.com/FurkanCodes/supercomp/assets/74744821/0319b2e1-e15d-489a-a880-88672274d78a)
 
-A command-line utility to quickly generate React component files with a directory structure.
+A command-line utility to quickly generate React and Vue boilerplate component files with a directory structure.
 
 ## Features
 
@@ -11,88 +12,38 @@ A command-line utility to quickly generate React component files with a director
 - Generates a component file with the component's name and a basic structure.
 
 - Supports both JSX and TSX file types.
+- 
+- Support VUE files
 
 ## Installation
 
-  `npm i newponent`
+  `npm i supercomp`
+
+
+
+## USAGE
+There are two ways you can use this package. Either CLI or Command Line arguments
+
+## TO USE CLI
+`ncomp`
+  ![scomp-cli](https://github.com/FurkanCodes/supercomp/assets/74744821/9993af13-394b-47d7-a700-ecdb55d5839e)
+
 
 ## Usage
+![args](https://github.com/FurkanCodes/supercomp/assets/74744821/13e21ace-5d56-4595-b6cf-fbd993dab73a)
 
-ncomp NewComponent <jsx  |  tsx>+
+`ncomp NewComponent <jsx  |  tsx | vue>+`
   
-## TO USE CLI
-ncomp
-  
-
-
-
-Replace `NewComponent` with the name of your component and `<tsx | jsx>` with the file type you want to use (either `tsx` for TypeScript or `jsx` for JavaScript).
-
-
-
-*For example:*
-
-
-
-    ncomp MyComponent tsx
-
-
-
-This will create a new directory `MyComponent` with the following structure:
-
-
-
-> MyComponent/ 	
-
-	> ├── index.tsx 	
-
-	> └── MyComponent.tsx
-
-
-
-  
-
-
-
-And the content of `MyComponent.tsx` will be:
-
-  
-
-    import React from 'react';
-
-    const MyComponent: React.FC = () => { return <div>MyComponent</div>; };
-
-    export default MyComponent;
-
-
-
-  
-
-  
-
 
 
 ## Contributing
 
 
-
-  
-
-
-
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-
-
-  
-
 
 
 ## License
 
-
-
-  
 
 
 
