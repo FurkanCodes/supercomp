@@ -12,7 +12,7 @@ A command-line utility to quickly generate React and Vue boilerplate component f
 - Generates a component file with the component's name and a basic structure.
 
 - Supports both JSX and TSX file types.
-- 
+
 - Support VUE files
 
 ## Installation
