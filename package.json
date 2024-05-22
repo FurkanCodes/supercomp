@@ -1,15 +1,15 @@
 {
   "name": "supercomp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI tool to generate new JSX or TSX components",
   "main": "index.js",
   "type": "module",
   "bin": {
     "scomp": "./index.js"
   },
-"scripts" : {
-    "test" : "jest"
- },
+  "scripts": {
+    "test": "jest"
+  },
   "author": "Veli Furkan TURKOGLU",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +19,7 @@
     "ora": "^8.0.1"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/FurkanCodes/supercomp.git"
-},
+    "type": "git",
+    "url": "https://github.com/FurkanCodes/supercomp.git"
+  }
 }
