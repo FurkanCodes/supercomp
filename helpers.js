@@ -59,8 +59,7 @@ export const logError = (error) => {
 };
 
 export const logInfo = (info) => {
-  console.info("\n");
-  console.info(chalk.bold.bgBlue(info));
+  console.info(chalk.bold.blue(info));
 };
 
 export async function checkComponentExists(componentDir, componentName) {

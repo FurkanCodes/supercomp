@@ -9,6 +9,7 @@ import {
   logError,
   checkComponentExists,
   createIndexFile,
+  logInfo,
 } from "./helpers.js";
 import figlet from "figlet";
 
@@ -31,14 +32,23 @@ async function getTemplateContent(templatePath) {
 }
 
 async function main() {
-  try {
+  let componentName, fileType;
+
+  // Check if command-line arguments are provided correctly
+  if (process.argv.length === 3) {
+    logError("Error Occured! Use 'ncomp' to initilize CLI interface");
+    logInfo("Or run command: ncomp <ComponentName> <jsx,tsx,vue>");
+    process.exit(1);
+  } else if (process.argv.length > 3) {
+    componentName = process.argv[2];
+    fileType = process.argv[3].toLowerCase();
+  } else {
     const answers = await inquirer.prompt([
       {
         type: "input",
         name: "componentName",
         message: "Enter the component name:",
         validate: (value) => {
-          // Check for special characters using a regular expression
           const hasSpecialChars = /[~@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(
             value
           );
@@ -61,41 +71,36 @@ async function main() {
           value !== null || "Please select a component type.",
       },
     ]);
-    logIntro({
-      name: answers.componentName,
-      dir: join(process.cwd(), "src", answers.componentName),
-      lang: answers.fileType.toLowerCase(),
-    });
-    await createComponent(
-      answers.componentName,
-      answers.fileType.toLowerCase()
-    );
-  } catch (error) {
-    console.error(chalk.red("Error creating component:", error));
-    process.exit(1);
+
+    componentName = answers.componentName;
+    fileType = answers.fileType.toLowerCase();
   }
+
+  logIntro({
+    name: componentName,
+    dir: join(process.cwd(), "src", componentName),
+    lang: fileType,
+  });
+  await createComponent(componentName, fileType);
 }
 
 main().catch(console.error); // Handle any errors during execution
 
 async function createComponent(componentName, fileType) {
-  // Validate arguments
   if (
     !componentName ||
     !fileType ||
     !["jsx", "tsx", "vue"].includes(fileType)
   ) {
-    console.error(chalk.bgRed.bold("HEY WRONG PARAMETERS"));
-    console.error(
-      chalk.bgGreenBright.bold("Usage: ncomp <ComponentName> <jsx|tsx|vue>")
-    );
+    logError("WRONG PARAMETERS USED PLEASE REFER TO THE USAGE ABOVE");
+    logInfo("Usage: ncomp <ComponentName> <jsx|tsx|vue>");
+
     process.exit(1);
   }
 
-  // Transform the component name to Pascal Case
   componentName = toPascalCase(componentName);
 
-  const projectDir = process.cwd(); // Current working directory of the project
+  const projectDir = process.cwd();
   const srcDir = join(projectDir, "src");
   const componentDir = join(srcDir, componentName);
   const componentFilePath = join(componentDir, `${componentName}.${fileType}`);
@@ -104,14 +109,10 @@ async function createComponent(componentName, fileType) {
     if (await checkComponentExists(componentDir, componentName)) {
       process.exit(1);
     }
-    // Create the component directory
     await fs.mkdir(componentDir, { recursive: true });
 
-    // Load the template content based on fileType
     const templatePath = `./templates/${fileType}.js`;
     const componentFileContent = await getTemplateContent(templatePath);
-
-    // Replace placeholders in the template with actual values
     const finalComponentFileContent = componentFileContent.replace(
       /COMPONENT_NAME/g,
       componentName
@@ -119,7 +120,6 @@ async function createComponent(componentName, fileType) {
 
     await fs.writeFile(componentFilePath, finalComponentFileContent);
 
-    // Create the index file only for JSX and TSX components
     await createIndexFile(componentDir, componentName, fileType);
   } catch (error) {
     console.error(chalk.bgRed.bold("Error creating component:"), error);
