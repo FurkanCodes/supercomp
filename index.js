@@ -38,8 +38,8 @@ async function main() {
 
   // Check if command-line arguments are provided correctly
   if (process.argv.length === 3) {
-    logError("Error Occured! Use 'ncomp' to initilize CLI interface");
-    logInfo("Or run command: ncomp <ComponentName> <jsx,tsx,vue>");
+    logError("Error Occured! Use 'npx supercomp' to initilize CLI interface");
+    logInfo("Or run command: npx supercomp <ComponentName> <jsx,tsx,vue>");
     process.exit(1);
   } else if (process.argv.length > 3) {
     componentName = process.argv[2];
@@ -94,8 +94,8 @@ async function createComponent(componentName, fileType) {
     !fileType ||
     !["jsx", "tsx", "vue"].includes(fileType)
   ) {
-    logError("WRONG PARAMETERS USED PLEASE REFER TO THE USAGE ABOVE");
-    logInfo("Usage: ncomp <ComponentName> <jsx|tsx|vue>");
+    logError("WRONG PARAMETERS USED PLEASE REFER TO THE USAGE BELOW");
+    logInfo("Usage: npx supercomp <ComponentName> <jsx|tsx|vue>");
 
     process.exit(1);
   }
@@ -103,6 +103,7 @@ async function createComponent(componentName, fileType) {
   componentName = toPascalCase(componentName);
 
   const projectDir = process.cwd();
+  //default olarak src, TODO add modularity to source folder
   const srcDir = join(projectDir, "src");
   const componentDir = join(srcDir, componentName);
   const componentFilePath = join(componentDir, `${componentName}.${fileType}`);
