@@ -17,23 +17,24 @@ A command-line utility to quickly generate React and Vue boilerplate component f
 
 ## Installation
 
-  `npm i supercomp`
+  `npx supercomp`
 
 
 
 ## USAGE
 There are two ways you can use this package. Either CLI or Command Line arguments
 
-## TO USE CLI
-`ncomp`
+## To use CLI
+`npx supercomp` will trigger the CLI
   ![scomp-cli](https://github.com/FurkanCodes/supercomp/assets/74744821/9993af13-394b-47d7-a700-ecdb55d5839e)
 
 
-## Usage
+## With Args
+`npx supercomp NewComponent <jsx  |  tsx | vue>+`
+  
 ![args](https://github.com/FurkanCodes/supercomp/assets/74744821/13e21ace-5d56-4595-b6cf-fbd993dab73a)
 
-`ncomp NewComponent <jsx  |  tsx | vue>+`
-  
+
 
 
 ## Contributing
