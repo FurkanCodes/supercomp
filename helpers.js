@@ -5,6 +5,8 @@ import { promises as fs } from "fs";
 const langNames = {
   jsx: "JavaScript",
   tsx: "TypeScript",
+  dart: "Dart",
+  custom: "Custom",
 };
 
 const colors = {
@@ -16,7 +18,7 @@ const colors = {
 };
 
 export const logComponentLang = (selected) =>
-  ["jsx", "tsx"]
+  ["jsx", "tsx", "dart", "custom"]
     .map((option) =>
       option === selected
         ? `${chalk.bold.rgb(...colors.blue)(langNames[option])}`

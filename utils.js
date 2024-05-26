@@ -1,6 +1,6 @@
 export function toPascalCase(str) {
-  return (
-    str.charAt(0).toUpperCase() + // Capitalize the first character
-    str.slice(1).toLowerCase()
-  ); // Make the rest of the string lowercase
+  return str
+    .split(/[\s-_]/) // Split by spaces, hyphens, or underscores
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+    .join(""); // Join all words into a single string
 }
