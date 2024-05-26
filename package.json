@@ -1,6 +1,6 @@
 {
   "name": "supercomp",
-  "version": "2.0.0.1",
+  "version": "2.0.0",
   "description": "A CLI tool to generate new JSX or TSX components",
   "main": "index.js",
   "type": "module",
