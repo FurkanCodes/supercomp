@@ -1,40 +1,62 @@
-# Super Comp
-![banner](https://github.com/FurkanCodes/supercomp/assets/74744821/0319b2e1-e15d-489a-a880-88672274d78a)
+```plaintext
+███████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██████╗ ███╗   ███╗██████╗
+██╔════╝██║   ██║██╔══██╗██╔════╝██╔══██╗██╔════╝██╔═══██╗████╗ ████║██╔══██╗
+███████╗██║   ██║██████╔╝█████╗  ██████╔╝██║     ██║   ██║██╔████╔██║██████╔╝
+╚════██║██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██║     ██║   ██║██║╚██╔╝██║██╔═══╝
+███████║╚██████╔╝██║     ███████╗██║  ██║╚██████╗╚██████╔╝██║ ╚═╝ ██║██║
+╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝
+```
 
-A command-line utility to quickly generate React and Vue boilerplate component files with a directory structure.
+# Table of contents
 
-## Features
-
-- Creates a new directory for the component with the component's name.
-
-- Generates an `index.jsx` or `index.tsx` file to export the component.
-
-- Generates a component file with the component's name and a basic structure.
-
-- Supports both JSX and TSX file types.
-
-- Support VUE files
-
-## Installation
-
-  `npx supercomp`
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Use](#use)
+    1. [CLI](#cli)
+    2. [Arguments](#args)
 
 
+## Introduction <a name="introduction"></a>
 
-## USAGE
-There are two ways you can use this package. Either CLI or Command Line arguments
+> Supercomp is a package that lets your use your terminal to quickly create component files for your projects. It utilizes a template system, it has pre-made templates for TypeScript, JavaScript and Dart, however, users can bring their own templates.
 
-## To use CLI
+## Features <a name="features"></a>
+
+-  Creates a new folder for the component with the component's name.
+-  Generates index.tsx or index.jsx to export the component easily.
+- Generates the component file with the name and a simple structure.
+- Default support for JSX,TSX, Dart and Vue file extension
+- Stateful and Stateless widget support for Dart extesion.
+- Support for custom folder selection
+- Support for user's own custom template files
+
+
+
+## Installation <a name="installation"></a>
+
+Use the package manager **npx** to install SuperComp.
+
+```bash
+npx supercomp
+```
+
+> During the first installation, users are prompted **to create _"user_template"_ folder**. If they do so, they are able to use any kind of file they put inside that folder as their template to quickly generate new files within their project.
+
+
+## Use <a name="use"></a>
+SuperComp can be used in two different ways. Either through *CLI* or **Arguments**.
+
+> If you wish to use your templates inside user_templates, select CUSTOM option on CLI.
+       
+## CLI <a name="cli"></a>
+
 `npx supercomp` will trigger the CLI
-  ![scomp-cli](https://github.com/FurkanCodes/supercomp/assets/74744821/9993af13-394b-47d7-a700-ecdb55d5839e)
 
+## Arguments <a name="args"></a>
+> Arguments use is still under-development, it may not offer the same flexibility as CLI use.
 
-## With Args
-`npx supercomp NewComponent <jsx  |  tsx | vue>+`
-  
-![args](https://github.com/FurkanCodes/supercomp/assets/74744821/13e21ace-5d56-4595-b6cf-fbd993dab73a)
-
-
+`npx supercomp ComponentName <jsx  |  tsx | vue | dart>`
 
 
 ## Contributing
