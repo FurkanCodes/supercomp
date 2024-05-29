@@ -1,11 +1,11 @@
-`
+```
 ███████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██████╗ ███╗   ███╗██████╗
 ██╔════╝██║   ██║██╔══██╗██╔════╝██╔══██╗██╔════╝██╔═══██╗████╗ ████║██╔══██╗
 ███████╗██║   ██║██████╔╝█████╗  ██████╔╝██║     ██║   ██║██╔████╔██║██████╔╝
 ╚════██║██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██║     ██║   ██║██║╚██╔╝██║██╔═══╝
 ███████║╚██████╔╝██║     ███████╗██║  ██║╚██████╗╚██████╔╝██║ ╚═╝ ██║██║
 ╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝
-`
+```
 
 # Table of contents
 
@@ -52,6 +52,8 @@ SuperComp can be used in two different ways. Either through *CLI* or **Arguments
 ## CLI <a name="cli"></a>
 
 `npx supercomp` will trigger the CLI
+
+
 
 ## Arguments <a name="args"></a>
 > Arguments use is still under-development, it may not offer the same flexibility as CLI use.
